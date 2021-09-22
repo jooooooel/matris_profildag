@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Matrix
 {
-    class MatrixDrawer
+    partial class Program
     {
         /// <summary>
         /// Ritar ut matrisen på den nuvarande platsen där markören är
