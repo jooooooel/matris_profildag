@@ -47,7 +47,11 @@ namespace Matrix
             // Exempel: MatrixChecker.CheckMultiplication(1, 2, 3, 4, 1, 2, 3, 4, 7, 10, 15, 22);
 
 
+            // Byt ut detta anropet med dina matrisvärden, så kommer programmet att rita ut dem istället :)
             Draw2x2Matrix(1.01f, 0.00f, 0.00f, 1);
+
+
+
             Console.ReadKey();
         }
     }
