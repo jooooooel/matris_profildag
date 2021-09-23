@@ -11,47 +11,121 @@ namespace Matrix
     {
         static void Main(string[] args)
         {
-            /*
-             * Där finns tester tillgängliga genom att skriva
-             * MatrixChecker.CheckAddition
-             * MatrixChecker.CheckMultiplication
-             * MatrixChecker.CheckRotationMatrix
-             * 
-             * Observera att testerna inte är noga testade.
-             * 
-             * De tar emot argument enligt följande standard:
-             * CheckAddition tar emot alla Matris-värden 00, 01, 10, 11 för matris A
-             * och alla Matris-värden 00, 01, 10, 11 för matris B, och den sista är
-             * då det uträknade resultatet av A + B, som då är en matris 00, 01, 10, 11
-             * 
-             * CheckMultiplication liknar CheckAddition, den tar emot tre matriser,
-             * A, B och sedan resultatet av A * B. Sen kommer den att jämföra och se
-             * ifall matrisen har blivit rätt
-             * 
-             * CheckRotationMatrix tar emot antalet radianer du roterat en matris av,
-             * och sedan en rotationsmatris som du har skapat. Den jämför sedan värden
-             * för att se ifall matriserna stämmer överens.
-             */
-
-            /*
-             * Där finns ett inbyggt verktyg för att rita ut matriser i två format.
-             * Den första tar emot alla matrisvärden, 00, 01, 10, 11 och den andra
-             * tar emot en float[,] (en float 2D-array) och skriver sedan ut matrisen
-             * formaterat, och endast med 2 decimaler.
-             */
-
-            // De fyra första siffrorna = Matris A, de nästa fyra siffrorna = Matris B, de sista fyra siffrorna = resultatet av A + B
-            // Exempel: MatrixChecker.CheckAddition(1, 2, 3, 4, 1, 2, 3, 4, 2, 4, 6, 8);
-
-            // De fyra första siffrorna = Matris A, de nästa fyra siffrorna = Matris B, de sista fyra siffrorna = resultatet av A * B
-            // Exempel: MatrixChecker.CheckMultiplication(1, 2, 3, 4, 1, 2, 3, 4, 7, 10, 15, 22);
-
-
-            // Byt ut detta anropet med dina matrisvärden, så kommer programmet att rita ut dem istället :)
-            Draw2x2Matrix(3f, 3f, 4f, 4f, 5, 4, 5, 4,);
-
-
-
+        start:
+            Console.Clear();
+            Console.WriteLine("addition, multiplikation, rotationsmatris eller rotationsmatris med multiplikation?");
+            string val = Console.ReadLine();
+            if (val == "addition")
+            {
+                Console.Clear();
+                Console.WriteLine("a?");
+                String a00z = Console.ReadLine();
+                String a01z = Console.ReadLine();
+                String a10z = Console.ReadLine();
+                String a11z = Console.ReadLine();
+                Console.WriteLine("b?");
+                String b00z = Console.ReadLine();
+                String b01z = Console.ReadLine();
+                String b10z = Console.ReadLine();
+                String b11z = Console.ReadLine();
+                int a00 = int.Parse(a00z);
+                int a01 = int.Parse(a01z);
+                int a10 = int.Parse(a10z);
+                int a11 = int.Parse(a11z);
+                int b00 = int.Parse(b00z);
+                int b01 = int.Parse(b01z);
+                int b10 = int.Parse(b10z);
+                int b11 = int.Parse(b11z);
+                Console.WriteLine(a00 + b00);
+                Console.WriteLine(a01 + b01);
+                Console.WriteLine(a10 + b10);
+                Console.WriteLine(a11 + b11);
+                Console.ReadKey();
+                goto start;
+            }
+            else if (val == "multiplikation")
+            {
+                Console.Clear();
+                Console.WriteLine("a?");
+                String a00q = Console.ReadLine();
+                String a01q = Console.ReadLine();
+                String a10q = Console.ReadLine();
+                String a11q = Console.ReadLine();
+                Console.WriteLine("b?");
+                String b00q = Console.ReadLine();
+                String b01q = Console.ReadLine();
+                String b10q = Console.ReadLine();
+                String b11q = Console.ReadLine();
+                float a00 = int.Parse(a00q);
+                float a01 = int.Parse(a01q);
+                float a10 = int.Parse(a10q);
+                float a11 = int.Parse(a11q);
+                float b00 = int.Parse(b00q);
+                float b01 = int.Parse(b01q);
+                float b10 = int.Parse(b10q);
+                float b11 = int.Parse(b11q);
+                Console.WriteLine(a00 * b00 + (a01 * b10));
+                Console.WriteLine(a00 * b01 + (a01 * b11));
+                Console.WriteLine(a10 * b00 + (a11 * b10));
+                Console.WriteLine(a10 * b01 + (a11 * b11));
+                Console.ReadKey();
+                goto start;
+            }
+            else if (val == "rotationsmatris")
+            {
+                Console.Clear();
+                Console.WriteLine("a?");
+                String a00q = Console.ReadLine();
+                String a01q = Console.ReadLine();
+                String a10q = Console.ReadLine();
+                String a11q = Console.ReadLine();
+                float a00 = int.Parse(a00q);
+                float a01 = int.Parse(a00q);
+                float a10 = int.Parse(a00q);
+                float a11 = int.Parse(a00q);
+                Console.WriteLine(Math.Cos(a00));
+                Console.WriteLine(Math.Sin(a01));
+                Console.WriteLine(Math.Sin(-a10));
+                Console.WriteLine(Math.Cos(a11));
+                Console.ReadKey();
+                goto start;
+            }
+            else if (val == "rotationsmatris med multiplikation")
+            {
+                Console.Clear();
+                Console.WriteLine("a?");
+                String a00q = Console.ReadLine();
+                String a01q = Console.ReadLine();
+                String a10q = Console.ReadLine();
+                String a11q = Console.ReadLine();
+                Console.WriteLine("b?");
+                String b00q = Console.ReadLine();
+                String b01q = Console.ReadLine();
+                String b10q = Console.ReadLine();
+                String b11q = Console.ReadLine();
+                float a00 = float.Parse(a00q);
+                float a01 = float.Parse(a00q);
+                float a10 = float.Parse(a00q);
+                float a11 = float.Parse(a00q);
+                float b00 = float.Parse(a00q);
+                float b01 = float.Parse(a00q);
+                float b10 = float.Parse(a00q);
+                float b11 = float.Parse(a00q);
+                float q00 = (float)Math.Cos(a00);
+                float q01 = (float)Math.Sin(a01);
+                float q10 = (float)Math.Sin(a10);
+                float q11 = (float)Math.Cos(a11);
+                float p00 = (float)Math.Cos(b00);
+                float p01 = (float)Math.Sin(b01);
+                float p10 = (float)Math.Sin(b10);
+                float p11 = (float)Math.Cos(b11);
+                Console.WriteLine(q00 * p00 + (q01 * p10));
+                Console.WriteLine(q00 * p01 + (q01 * p11));
+                Console.WriteLine(-q10 * -p00 + (q11 * p10));
+                Console.WriteLine(q11 * p01 + (q11 * p11));
+                Console.ReadKey();
+                goto start;
+            }
             Console.ReadKey();
         }
     }
