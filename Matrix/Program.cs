@@ -48,7 +48,7 @@ namespace Matrix
 
 
             // Byt ut detta anropet med dina matrisvärden, så kommer programmet att rita ut dem istället :)
-            Draw2x2Matrix(1.01f, 0.00f, 0.00f, 1);
+            Draw2x2Matrix(3f, 3f, 4f, 4f, 5, 4, 5, 4,);
 
 
 
